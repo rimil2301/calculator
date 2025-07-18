@@ -1,0 +1,129 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #667eea;
+    animation: systematicColorChange 20s infinite linear;
+}
+
+@keyframes systematicColorChange {
+    0% { background: #667eea; } /* Soft Blue */
+    25% { background: #764ba2; } /* Deep Purple */
+    50% { background: #2c3e50; } /* Dark Slate */
+    75% { background: #3498db; } /* Bright Blue */
+    100% { background: #667eea; } /* Back to Soft Blue */
+}
+
+.calculator {
+    background: #1a1a1a;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    width: 360px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.display {
+    background: #2c2c2c;
+    color: #fff;
+    font-size: 2.5em;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: right;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 20px;
+    font-size: 1.5em;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s, background 0.2s;
+    transform-style: preserve-3d;
+}
+
+button:hover {
+    background: #555;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    animation: flip 0.4s ease-in-out;
+}
+
+@keyframes flip {
+    0% { transform: perspective(400px) rotateY(0deg); }
+    50% { transform: perspective(400px) rotateY(180deg); }
+    100% { transform: perspective(400px) rotateY(360deg); }
+}
+
+.operator {
+    background: #ff9500;
+}
+
+.operator:hover {
+    background: #ffaa33;
+}
+
+.equals {
+    background: #2196F3;
+}
+
+.equals:hover {
+    background: #42a5f5;
+}
+
+.clear {
+    background: #f44336;
+}
+
+.clear:hover {
+    background: #ef5350;
+}
+
+.currency-section {
+    margin-top: 20px;
+    color: #fff;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    background: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+select:hover {
+    background: #555;
+}
+
+.currency-result {
+    margin-top: 10px;
+    font-size: 1.2em;
+}
